@@ -68,5 +68,5 @@ Ministère de la Cohésion des Territoires et des Relations avec les Collectivit
 
 ## Licence
 
-AsgardManager (© République Française, 2020-2021) est publié sur le Dépôt interministériel des plugins QGIS sous licence GNU Affero General Public Licence v3.0 ou plus récent.
+POC Installation de bibliothèques avec PIP (© République Française, 2020-2021) est publié sur le Dépôt interministériel des plugins QGIS sous licence GNU Affero General Public Licence v3.0 ou plus récent.
 [AGPL 3 ou plus récent](https://spdx.org/licenses/AGPL-3.0-or-later.html)
