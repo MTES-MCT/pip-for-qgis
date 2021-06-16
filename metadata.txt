@@ -1,0 +1,37 @@
+[general]
+name = POC Installation de bibliotheques 
+description=POC Installation de bibliotheques
+about=This plugin POC Installation de bibliotheques 
+category = Tools
+version=0.2
+qgisMinimumVersion=3.0
+# Optional items:
+changelog:
+
+    ==========================================================================
+    = POC Bibli 
+    ** 0.2.0 : Didier LECLERC CMSIG MTE-MCTRCT-Mer/SG/SNUM/UNI/DRC Site de Rouen
+               Version under Qgis 3.18
+       Gestion proxy = par defaut celui du global_settings.ini        
+       Modification des isntructions avec python par python3 ( Merci a Michel Zevort )
+    ==========================================================================
+    ** 0.1.0 : Didier LECLERC CMSIG MTE-MCTRCT-Mer/SG/SNUM/UNI/DRC Site de Rouen
+               Version under Qgis 3.18
+       Ergonomics of the application:
+          ** Initialization
+          ** Menus
+          ** Toolbar
+          ** I.H.M. dedicated               
+    =======================================
+
+tags= POC INSTALLATION, INSTALLATION
+homepage = ""
+tracker = ""
+repository=http://piece-jointe-carto.developpement-durable.gouv.fr/NAT002/QGIS/plugins/plugins.xml
+icon=icons/logo_init.png  
+experimental = True
+deprecated = False
+
+# Author contact information
+author=Didier LECLERC - SG/SNUM/UNI/DRC Site de Rouen
+email=didier.leclerc@developpement-durable.gouv.fr  
