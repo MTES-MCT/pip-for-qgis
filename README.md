@@ -62,7 +62,7 @@ Ministère de la Cohésion des Territoires et des Relations avec les Collectivit
 
 ### Équipe
 
-- Didier LECLERC, analyse fonctionnell, concepteur, développeur MTE/MCTRCT SG/SNUM/UNI/DRC
+- Didier LECLERC, analyse fonctionnelle, concepteur, développeur MTE/MCTRCT SG/SNUM/UNI/DRC
 
 ---
 
