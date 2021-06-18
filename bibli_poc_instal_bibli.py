@@ -10,6 +10,8 @@ from qgis.core import *
 from qgis.gui import *
 import subprocess
 
+import configparser
+
 import qgis                              
 import os                       
 import datetime
@@ -90,6 +92,7 @@ def createLabelCase( mDialog, mX, mY, mMTextAinstaller, cle, val ) :
 
 #==================================================
 def executeInstalle( mDialog, mDicAinstaller, mDicInstalle, mOptions ) :
+
     mDic = {}
     for elemCase in mDialog.children() :
         for k, v  in mDicAinstaller.items() :
@@ -138,9 +141,7 @@ def installer_func(mDialog, mOptions, mDic):
                  existeProxy = True 
                  mParamGlob.append('--proxy=' + str(mProxy)) 
                  mParamGlob.append('--no-warn-script-location') 
-                 #subprocess.check_call(['python3', '-m', 'pip', '--proxy=' + str(mProxy), 'install', '--user', '--no-warn-script-location', cle])
               mParamGlob.append(cle) 
-              #subprocess.check_call(['python3', '-m', 'pip', 'install', '--user', cle])
            else :
               mParamGlob.append('install') 
               mParamGlob.append('--upgrade') 
@@ -149,11 +150,8 @@ def installer_func(mDialog, mOptions, mDic):
                  existeProxy = True 
                  mParamGlob.append('--proxy=' + str(mProxy)) 
                  mParamGlob.append('--no-warn-script-location') 
-                 mParamGlob.append(cle) 
-                 #subprocess.check_call(['python3', '-m', 'pip', '--proxy=' + str(mProxy), 'install', '--upgrade', '--user', '--no-warn-script-location', cle])
               mParamGlob.append(cle) 
-              #subprocess.check_call(['python3', '-m', 'pip', 'install', '--upgrade', '--user', cle])
-           print(mParamGlob)      
+
            subprocess.check_call(mParamGlob, shell=False)
           except :
            mParamGlob = [] 
@@ -166,23 +164,16 @@ def installer_func(mDialog, mOptions, mDic):
               if existeProxy : 
               #if mProxy != None :
                  mParamGlob.append('--no-warn-script-location') 
-                 mParamGlob.append(cle) 
-                 #subprocess.check_call(['python3', '-m', 'pip', 'install', '--user', '--no-warn-script-location', cle])
               mParamGlob.append(cle) 
-              #subprocess.check_call(['python3', '-m', 'pip', 'install', '--user', cle])
            else :
               mParamGlob.append('install') 
               mParamGlob.append('--upgrade') 
               mParamGlob.append('--user') 
               if mProxy != None :
                  mParamGlob.append('--no-warn-script-location') 
-                 mParamGlob.append(cle) 
-                 #subprocess.check_call(['python3', '-m', 'pip', 'install', '--upgrade', '--user', '--no-warn-script-location', cle])
-           mParamGlob.append(cle) 
-           print(mParamGlob)      
+              mParamGlob.append(cle) 
+
            subprocess.check_call(mParamGlob, shell=False)
-           #subprocess.check_call(['python3', '-m', 'pip', 'install', '--upgrade', '--user', cle])
-          #Execute traitement 
           
         elif mOptions == "DESINSTALLE" :   
            subprocess.check_call(['python3', '-m', 'pip', 'uninstall', '--yes', cle])
