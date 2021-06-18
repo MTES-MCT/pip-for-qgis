@@ -1,5 +1,5 @@
-# PLUGIN QGIS Installation de bibliothèques avec PIP à partir d'un plugin Qgis
-> Plugin pour QGIS, Installation de bibliothèques avec PIP à partir d'un plugin Qgis. Ce plugin est destiné aux développeurs qui souhaitent intégrer dans leur application, le processus d'installtion d'un bibliothèque nécessaire à leur programme.
+# PLUGIN QGIS POC Installation de bibliothèques avec PIP à partir d'un plugin Qgis
+> Plugin pour QGIS, POC Installation de bibliothèques avec PIP à partir d'un plugin Qgis. Ce plugin est destiné aux développeurs qui souhaitent intégrer dans leur application, le processus d'installtion d'un bibliothèque nécessaire à leur programme.
 
 ---           
 
@@ -19,7 +19,7 @@
 ### Automatiquement
 L’application se trouve sur la ressource du département MSP/DS/GSG (http://piece-jointe-carto.developpement-durable.gouv.fr/NAT002/QGIS/plugins/plugins.xml)
 et est donc accessible via le menu Extension : Installer / Gérer les extensions.
-"Installation de bibliothèques avec PIP" pourra être installé, mis à jour via ce dispositif.
+"POC Installation de bibliothèques avec PIP" pourra être installé, mis à jour via ce dispositif.
 
 ### Manuellement
 Procédez via le menu Extension : Installer / Gérer les extensions / item 'Installer depuis un zip'
@@ -39,7 +39,7 @@ En cours
 ---
 
 ## Structure des fichiers
-```
+```bash
 .                        # `Racine où se trouve les sources .py`
 │
 ├── i18n                 # `fichiers des langues
@@ -62,11 +62,11 @@ Ministère de la Cohésion des Territoires et des Relations avec les Collectivit
 
 ### Équipe
 
-- Didier LECLERC, analyse fonctionnelle, concepteur, développeur MTE/MCTRCT SG/SNUM/UNI/DRC
+- Didier LECLERC, analyse fonctionnell, concepteur, développeur MTE/MCTRCT SG/SNUM/UNI/DRC
 
 ---
 
 ## Licence
 
-Installation de bibliothèques avec PIP (© République Française, 2020-2021) est publié sur le Dépôt interministériel des plugins QGIS sous licence GNU Affero General Public Licence v3.0 ou plus récent.
+AsgardManager (© République Française, 2020-2021) est publié sur le Dépôt interministériel des plugins QGIS sous licence GNU Affero General Public Licence v3.0 ou plus récent.
 [AGPL 3 ou plus récent](https://spdx.org/licenses/AGPL-3.0-or-later.html)
