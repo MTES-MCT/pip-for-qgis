@@ -39,7 +39,7 @@ En cours
 ---
 
 ## Structure des fichiers
-```bash
+```
 .                        # `Racine où se trouve les sources .py`
 │
 ├── i18n                 # `fichiers des langues
