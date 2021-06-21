@@ -2,6 +2,8 @@
 > Plugin pour QGIS, POC Installation de bibliothèques avec PIP à partir d'un plugin Qgis. Ce plugin est destiné aux développeurs qui souhaitent intégrer dans leur application, le processus d'installtion d'un bibliothèque nécessaire à leur programme.
 
 ---           
+## version
+- [0.2.0]
 
 ## Technologies
 - [Python 3.x]
