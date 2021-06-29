@@ -9,8 +9,7 @@ from qgis.utils import iface
 from qgis.core import *
 from qgis.gui import *
 import subprocess
-
-import configparser
+import re
 
 import qgis                              
 import os                       
@@ -124,7 +123,8 @@ def installer_func(mDialog, mOptions, mDic):
 
     sys.path.append(plugin_dir)
 
-    mProxy, mParamGlobPythonExe, mParamGlobParam1Pip, mParamGlobParam2Pip = returnProxyGlobalSettings(), 'python3', '-m', 'pip'
+    mProxy, mParamGlobPythonExe, mParamGlobParam1Pip, mParamGlobParam2Pip = returnProxyPac(), 'python3', '-m', 'pip'
+    
     for cle,valeur in mDic.items():
          
         if mOptions == "INSTALLE" :
@@ -152,6 +152,7 @@ def installer_func(mDialog, mOptions, mDic):
                  mParamGlob.append('--no-warn-script-location') 
               mParamGlob.append(cle) 
 
+           print("mParamGlob 1 {}".format(str(mParamGlob)))
            subprocess.check_call(mParamGlob, shell=False)
           except :
            mParamGlob = [] 
@@ -162,7 +163,6 @@ def installer_func(mDialog, mOptions, mDic):
               mParamGlob.append('install') 
               mParamGlob.append('--user') 
               if existeProxy : 
-              #if mProxy != None :
                  mParamGlob.append('--no-warn-script-location') 
               mParamGlob.append(cle) 
            else :
@@ -173,6 +173,7 @@ def installer_func(mDialog, mOptions, mDic):
                  mParamGlob.append('--no-warn-script-location') 
               mParamGlob.append(cle) 
 
+           print("mParamGlob 2 {}".format(str(mParamGlob)))
            subprocess.check_call(mParamGlob, shell=False)
           
         elif mOptions == "DESINSTALLE" :   
@@ -183,24 +184,37 @@ def installer_func(mDialog, mOptions, mDic):
 
 
 #==================================================
-def returnProxyGlobalSettings():
-    mDicAutre = {}
-    mSettings = QgsSettings()
-    mSettings.beginGroup("[proxy]")
+def returnProxyPac():
+    #ajout Alain
+    try :
+        import pypac
+    except ImportError:
+        import sys
+        this_dir = os.path.dirname(os.path.realpath(__file__))
+        import_path = os.path.join(this_dir, 'site-packages')
+        sys.path.insert(0, import_path)
+        import pypac
+        from pypac import get_pac
+    #ajout Alain 
+
+    pac = pypac.get_pac(url=None, js=None, from_os_settings=True)
     
-    valueDefautProxy     = 'pfrie-std.proxy.e2.rie.gouv.fr'
-    valueDefautProxyPort = '8080'
-    mDicAutre["valueDefautProxy"]   = valueDefautProxy
-    mDicAutre["valueDefautProxyPort"]= valueDefautProxyPort
-
-    for key, value in mDicAutre.items():
-        if mSettings.contains(key) :
-           mDicAutre[key] = mSettings.value(key)           
-
-    mSettings.endGroup()
-    mProxy = mDicAutre["valueDefautProxy"] + ":" + mDicAutre["valueDefautProxyPort"]
+    if pac :
+       mProxy = pac.find_proxy_for_url('www.google.fr', 'www.google.fr')
+       print("mRet 1 {}".format(str(mProxy)))
+       if mProxy.strip().upper() !=  "DIRECT" : 
+          mPattern = '^PROXY'
+          try :
+             mProxy = mProxy[re.search(mPattern, mProxy).end():-1].strip()
+          except :
+             mProxy = None
+       else :
+          mProxy = None
+       print("mRet 2 {}".format(str(mProxy)))
+    else :
+       mProxy = None
     return mProxy
-
+    
 #==================================================
 def returnVersion() : return "version 0.2.0"
 

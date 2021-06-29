@@ -30,7 +30,7 @@ class Ui_Dialog_POC(object):
         lScreenDialog, hScreenDialog = 700, 500
         #--------
         Dialog.resize(QtCore.QSize(QtCore.QRect(0,0,lScreenDialog, hScreenDialog).size()).expandedTo(Dialog.minimumSizeHint()))
-        Dialog.setWindowTitle("POC Library installation")
+        Dialog.setWindowTitle("Library installation")
         Dialog.setWindowModality(Qt.WindowModal)
         Dialog.setWindowFlags(Qt.WindowMaximizeButtonHint | Qt.WindowCloseButtonHint | Qt.WindowMinimizeButtonHint)
         iconSource = bibli_poc_instal_bibli.pathIcon("poc_instal_bibli.png")
@@ -109,4 +109,9 @@ class Ui_Dialog_POC(object):
         self.installeButton.setText(QtWidgets.QApplication.translate("poc_instal_bibli_ui", "Installe / Maj", None))
         self.desinstalleButton.setText(QtWidgets.QApplication.translate("poc_instal_bibli_ui", "Désinstalle", None))
         self.okhButton.setText(QtWidgets.QApplication.translate("poc_instal_bibli_ui", "Close", None))
+
+    def resizeEvent(self, event):
+        self.installeButton.setGeometry(QtCore.QRect(((self.width() / 2)  + 50),  (self.height() - 80), 100,23))
+        self.desinstalleButton.setGeometry(QtCore.QRect(((self.width() / 2) - 150),  (self.height() - 80), 100,23))
+        self.okhButton.setGeometry(QtCore.QRect(((self.width() / 2) - 50),  (self.height() - 50), 100,23))
                  

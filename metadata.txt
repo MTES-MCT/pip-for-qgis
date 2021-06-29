@@ -1,7 +1,7 @@
 [general]
-name = POC Installation de bibliotheques 
-description=POC Installation de bibliotheques
-about=This plugin POC Installation de bibliotheques 
+name = Installation de bibliotheques 
+description=Installation de bibliotheques
+about=This plugin Installation de bibliotheques 
 category = Tools
 version=0.2
 qgisMinimumVersion=3.0
@@ -9,11 +9,13 @@ qgisMinimumVersion=3.0
 changelog:
 
     ==========================================================================
-    = POC Bibli 
+    = Installation Bibliotheque 
     ** 0.2.0 : Didier LECLERC CMSIG MTE-MCTRCT-Mer/SG/SNUM/UNI/DRC Site de Rouen
                Version under Qgis 3.18
-       Gestion proxy = par defaut celui du global_settings.ini        
-       Modification des isntructions avec python par python3 ( Merci a Michel Zevort )
+       Gestion proxy 
+          ** Avec VPN active ou pas et gestion du PAC proxy si il existe
+             * par defaut avec PYPAC ( Merci a Alain Ferraton pour l ajout de la bibliotheque )        
+       Modification des instructions avec python par python3 ( Merci a Michel Zevort pour l info)
     ==========================================================================
     ** 0.1.0 : Didier LECLERC CMSIG MTE-MCTRCT-Mer/SG/SNUM/UNI/DRC Site de Rouen
                Version under Qgis 3.18
@@ -24,7 +26,7 @@ changelog:
           ** I.H.M. dedicated               
     =======================================
 
-tags= POC INSTALLATION, INSTALLATION
+tags= INSTALLATION, BIBLIOTHEQUE
 homepage = ""
 tracker = ""
 repository=http://piece-jointe-carto.developpement-durable.gouv.fr/NAT002/QGIS/plugins/plugins.xml

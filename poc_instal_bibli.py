@@ -19,7 +19,7 @@ import os
 
 class MainPlugin(object):
   def __init__(self, iface):
-     self.name = "POC Installation de bibliothèques"
+     self.name = "Installation de bibliothèques"
      self.iface = iface
     
      # Generation de la traduction selon la langue choisie   
@@ -37,16 +37,16 @@ class MainPlugin(object):
 
   def initGui(self):
      #Construction du menu
-     self.menu=QMenu("POCBIBLI")
+     self.menu=QMenu("BIBLI")
      self.menu.setTitle(QtWidgets.QApplication.translate("poc_instal_bibli_main", "POC Library installation") + "  (" + str(bibli_poc_instal_bibli.returnVersion()) + ")")
 
      menuIcon = bibli_poc_instal_bibli.pathIcon("poc_instal_bibli.png")
      self.poc = QAction(QIcon(menuIcon),"POC Library installation " + "  (" + str(bibli_poc_instal_bibli.returnVersion()) + ")",self.iface.mainWindow())
-     self.poc.setText(QtWidgets.QApplication.translate("poc_instal_bibli_main", "POC Library installation") + "  (" + str(bibli_poc_instal_bibli.returnVersion()) + ")")
+     self.poc.setText(QtWidgets.QApplication.translate("poc_instal_bibli_main", "Library installation") + "  (" + str(bibli_poc_instal_bibli.returnVersion()) + ")")
      self.poc.triggered.connect(self.run)
      
      #Ajouter une barre d'outils'
-     self.toolBarName = QtWidgets.QApplication.translate("poc_instal_bibli_main", "My tool bar POC Library installation")
+     self.toolBarName = QtWidgets.QApplication.translate("poc_instal_bibli_main", "My tool bar Library installation")
      self.toolbar = self.iface.addToolBar(self.toolBarName)
      # Pour faire une action
      self.toolbar.addAction(self.poc)
